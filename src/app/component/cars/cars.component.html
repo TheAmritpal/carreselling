@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="container">
+    <h1 class="pt-5 text-center">All Cars</h1>
+    <div class="form-group">
+      <label>Select Cars According Their Top Speed</label>
+      <select
+        (change)="speed($event)"
+        class="form-control w-25 d-inline-block ml-2"
+      >
+        <option value="100">100 km/h</option>
+        <option value="200">200 km/h</option>
+        <option value="300">300 km/h</option>
+      </select>
+    </div>
+    <div class="row text-center mt-2">
+      <div *ngFor="let car of cars" class="col-lg-3 col-md-4 col-sm-6 my-1">
+        <div class="card" style="width: 18rem">
+          <div class="image">
+            <img
+              src="./../../../assets/images/one.jpg"
+              class="card-img-top im py-3 px-3"
+              alt="..."
+            />
+          </div>
+          <div class="card-body text-left to">
+            <h5 class="card-title">{{ car.carName }}</h5>
+            <span class="card-text d-block pad"
+              >Car Type: {{ car.carType }}</span
+            >
+            <span class="card-text d-block pad">Price: {{ car.price }}</span>
+            <span class="card-text d-block pad mb-3"
+              >Top Speed: {{ car.topSpeed }}</span
+            >
+            <a routerLink="#" class="btn btn-outline-dark">Buy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
